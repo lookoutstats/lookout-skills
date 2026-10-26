@@ -32,11 +32,22 @@ The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an a
 
 The plugin installs the two skills and the hosted Lookout MCP server (`https://mcp.lookoutstats.com`).
 
-## Use the skills in a different agent
+## Install in Cursor, Codex, Copilot and other agents
 
-Each skill is a `SKILL.md` file in `skills/`. Agents that read the Agent Skills format can use the files without changes. Copy the folder of a skill into the skills folder of your agent.
+The skills use the open Agent Skills format (a `SKILL.md` file in a folder). Cursor, Codex, GitHub Copilot, Gemini CLI and many other agents can read them.
 
-The skills need the Lookout MCP server. Add the server to your agent first. The [lookout-mcp README](https://github.com/lookoutstats/lookout-mcp#60-second-setup) gives the configuration for Claude Desktop, Cursor, Windsurf and other clients.
+1. Add the Lookout MCP server to your agent. The [lookout-mcp README](https://github.com/lookoutstats/lookout-mcp#60-second-setup) gives the configuration for Cursor, Windsurf, Claude Desktop and other clients.
+2. Install the skills with the [skills CLI](https://github.com/vercel-labs/skills):
+
+   ```bash
+   npx skills add lookoutstats/lookout-skills
+   ```
+
+   The CLI asks which agents to install the skills for. To install for Cursor only, add `-a cursor`. To install for all your projects, add `-g`.
+
+3. In the agent, ask: "Fix the top item of my Lookout Fix list."
+
+You can also copy a skill folder from `skills/` into the skills folder of your agent (for example `.cursor/skills/` in your project).
 
 ## How `lookout-fix` finds your site
 
