@@ -1,7 +1,7 @@
 {
   "name": "lookout",
   "owner": {
-    "name": "Lookout",
+    "name": "lookoutstats.com",
     "url": "https://lookoutstats.com"
   },
   "metadata": {
@@ -14,7 +14,7 @@
       "description": "Fix the top items of a Lookout Fix list in your code, and write a weekly report across your boards. Includes the Lookout MCP server.",
       "version": "0.1.0",
       "author": {
-        "name": "Lookout",
+        "name": "lookoutstats.com",
         "url": "https://lookoutstats.com"
       },
       "license": "MIT",
