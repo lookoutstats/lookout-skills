@@ -1,8 +1,8 @@
 {
   "name": "lookoutstats",
   "displayName": "Lookout — Vercel Analytics skills",
-  "version": "0.1.0",
-  "description": "Skills for Lookout (Vercel Web Analytics for all your projects): fix the top items of a board's Fix list in your code, and write a weekly report across your boards. Includes the Lookout MCP server.",
+  "version": "0.2.0",
+  "description": "Skills for Lookout (Vercel Web Analytics for all your projects): fix the top items of a board's Fix list in your code, find the cause of a traffic change, check a deploy for regressions, and write a weekly report. Includes the Lookout MCP server.",
   "author": {
     "name": "lookoutstats.com",
     "url": "https://lookoutstats.com"
