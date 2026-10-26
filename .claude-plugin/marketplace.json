@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "lookout",
+      "name": "lookoutstats",
       "source": "./",
       "description": "Fix the top items of a Lookout Fix list in your code, and write a weekly report across your boards. Includes the Lookout MCP server.",
       "version": "0.1.0",

@@ -24,7 +24,7 @@ The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an a
 
    ```text
    /plugin marketplace add lookoutstats/lookout-skills
-   /plugin install lookout@lookout
+   /plugin install lookoutstats@lookout
    ```
 
 3. When Claude Code asks for the API key, paste it. Claude Code keeps the key in its own settings, not in your repository.
