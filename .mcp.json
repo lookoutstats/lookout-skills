@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "lookout": {
+      "type": "http",
+      "url": "https://mcp.lookoutstats.com",
+      "headers": { "Authorization": "Bearer ${user_config.api_key}" }
+    }
+  }
+}

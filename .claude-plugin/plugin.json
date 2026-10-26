@@ -1,0 +1,25 @@
+{
+  "name": "lookout",
+  "displayName": "Lookout — Vercel Analytics skills",
+  "version": "0.1.0",
+  "description": "Skills for Lookout (Vercel Web Analytics for all your projects): fix the top items of a board's Fix list in your code, and write a weekly report across your boards. Includes the Lookout MCP server.",
+  "author": {
+    "name": "Lookout",
+    "url": "https://lookoutstats.com"
+  },
+  "homepage": "https://lookoutstats.com/vercel-analytics-api-mcp",
+  "repository": "https://github.com/lookoutstats/lookout-skills",
+  "documentationUrl": "https://github.com/lookoutstats/lookout-skills#readme",
+  "supportUrl": "https://github.com/lookoutstats/lookout-skills/issues",
+  "license": "MIT",
+  "keywords": ["vercel", "analytics", "web-analytics", "speed-insights", "core-web-vitals", "mcp", "lookout"],
+  "userConfig": {
+    "api_key": {
+      "title": "Lookout API key",
+      "description": "Your Lookout API key (lk_live_…). Create it in Lookout, Settings › API & MCP.",
+      "type": "string",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}

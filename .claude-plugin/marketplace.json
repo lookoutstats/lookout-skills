@@ -1,0 +1,24 @@
+{
+  "name": "lookout",
+  "owner": {
+    "name": "Lookout",
+    "url": "https://lookoutstats.com"
+  },
+  "metadata": {
+    "description": "Lookout skills for Claude Code: Vercel Web Analytics for all your projects."
+  },
+  "plugins": [
+    {
+      "name": "lookout",
+      "source": "./",
+      "description": "Fix the top items of a Lookout Fix list in your code, and write a weekly report across your boards. Includes the Lookout MCP server.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Lookout",
+        "url": "https://lookoutstats.com"
+      },
+      "license": "MIT",
+      "category": "productivity"
+    }
+  ]
+}
