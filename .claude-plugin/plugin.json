@@ -13,6 +13,7 @@
   "supportUrl": "https://github.com/lookoutstats/lookout-skills/issues",
   "license": "MIT",
   "privacyPolicyUrl": "https://lookoutstats.com/privacy",
+  "termsOfServiceUrl": "https://lookoutstats.com/terms",
   "keywords": [
     "vercel",
     "analytics",
