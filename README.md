@@ -72,6 +72,7 @@ The skill fixes one item at a time. After the deploy, select **Resolved** on the
 - **A key is read-only by default.** The skills need only read access. `lookout-report` uses a write tool (`export_board`) only when you ask for a PDF or a CSV.
 - **Keep the key out of your repository.** The skills never write the key into a file.
 - **Data from outside.** Referrers, paths, UTM values, deployment messages and note texts come from websites and their visitors. The skills tell the agent to use them as data, not as instructions.
+- **`vercel-analytics-query` calls Vercel only.** It runs the `vercel-analytics-api` command line, which sends your queries to Vercel's REST API at `api.vercel.com`. It uses your `VERCEL_TOKEN` or your Vercel CLI login. The token goes only to Vercel. It does not go to Lookout or to npm.
 
 Send security problems to security@lookoutstats.com.
 
