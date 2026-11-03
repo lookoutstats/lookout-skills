@@ -1,6 +1,6 @@
 ---
 name: lookout-investigate
-description: Find the probable cause of a traffic drop or spike on a Vercel site, using Lookout's analytics and the git history of the current repository. Use when the user asks why visitors dropped or jumped, what happened to a site's traffic, or whether a commit or deploy caused a change.
+description: Find the probable cause of a traffic drop or spike on a Vercel site. It uses Lookout's analytics and the git history of the current repository. Use when the user asks why visitors dropped or jumped, what happened to a site's traffic, or whether a commit or deploy caused a change.
 ---
 
 # Investigate a traffic change
@@ -9,7 +9,7 @@ Lookout shows when visitors changed and what came before: production deployments
 
 ## Requirements
 
-This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `get_campaigns`). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP, and to add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`, or the `lookoutstats` plugin). Never write the API key into a file.
+This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `get_campaigns`). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP. Then tell them to add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`, or the `lookoutstats` plugin). Never write the API key into a file.
 
 ## Steps
 
@@ -28,7 +28,11 @@ This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_s
 4. **Check the deployments.**
    - From the `get_site` result, take the production deployments in the 3 days before the change starts.
    - For each one, run `git show --stat <sha>` in the repository.
-   - Look for changes that can move traffic: a removed or renamed route without a redirect, a changed `robots.txt`, sitemap, `noindex` or canonical URL, a changed redirect, a removed link to or from another site, a broken page, or removed analytics.
+   - Look for changes that can move traffic:
+     - a removed or renamed route without a redirect, or a changed redirect
+     - a changed `robots.txt`, sitemap, `noindex` or canonical URL
+     - a removed link to or from another site
+     - a broken page, or removed analytics.
    - If the repository is not the site's repository (the shas are not found), say so and use only the analytics.
 5. **Decide.** Choose one finding:
    - **A commit:** the change starts within a day of a deployment, and its diff touches the page or the source that changed. Give the sha, the message and the lines that matter.

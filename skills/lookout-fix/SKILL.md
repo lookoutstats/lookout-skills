@@ -1,11 +1,11 @@
 ---
 name: lookout-fix
-description: Fix the top open item of a Lookout Fix list in the current repository. Use when the user asks what to fix on their site, asks to work through their Lookout Fix list, or mentions a Lookout item (slow Core Web Vitals, a dead-end landing page, high bounce, low conversion, falling traffic, untagged campaign links, or a setup gap such as no Speed Insights, no goal or no Web Analytics).
+description: Fix the top open item of a Lookout Fix list in the current repository. Use when the user asks what to fix on their site, or asks to work through their Lookout Fix list. Also use it when the user names a Lookout item. Items are slow Core Web Vitals, a dead-end landing page, high bounce, low conversion, falling traffic and untagged campaign links. Setup items are no Speed Insights, no goal and no Web Analytics.
 ---
 
 # Fix a Lookout Fix list item
 
-Lookout ranks what to fix on each board by the number of visitors affected. This skill takes the top open item for the site in the current repository, makes the change in the code, and tells the user how to check the result in Lookout.
+Lookout ranks what to fix on each board by the number of visitors affected. This skill takes the top open item for the site in the current repository and makes the change in the code. Then it tells the user how to check the result in Lookout.
 
 ## Requirements
 
@@ -56,7 +56,7 @@ Detect the framework from the repository first (Next.js, Vite/React, SvelteKit, 
 
 Start with the slowest route. Fix only the metrics that are not good:
 
-- **LCP** (goal ≤ 2.5 s): compress the hero image, serve it as WebP or AVIF, preload the font, and remove scripts that block rendering above the fold. In Next.js, use `next/image` with `priority` on the hero image.
+- **LCP** (goal ≤ 2.5 s): compress the hero image and serve it as WebP or AVIF. Preload the font, and remove scripts that block rendering above the fold. In Next.js, use `next/image` with `priority` on the hero image.
 - **INP** (goal ≤ 200 ms): split large JavaScript, defer third-party scripts, and keep click handlers short.
 - **CLS** (goal ≤ 0.1): set `width` and `height` on images and embeds, reserve space for banners, and stop late fonts from moving text (`font-display: optional`, or `next/font`).
 
@@ -89,7 +89,7 @@ A steady drop usually has one cause: a deploy, a paused campaign or a lost refer
 
 1. Find the first day of the drop in `get_site` with `range: "30d"`.
 2. Compare that day with the production deployments and the referrers. Look at the commits near that day (`git log --since … --until …`).
-3. If a commit is the probable cause (for example a removed page, a changed route without a redirect, a `noindex`, or a broken canonical URL), fix it. Otherwise, report the probable cause and do not change code.
+3. A commit can be the probable cause, for example a removed page, a changed route without a redirect, a `noindex` or a broken canonical URL. If so, fix it. Otherwise, report the probable cause and do not change code.
 
 ### `campaigns`: untagged campaign links
 

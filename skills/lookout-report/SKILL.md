@@ -1,6 +1,6 @@
 ---
 name: lookout-report
-description: Write a weekly (or monthly) Vercel Analytics report from Lookout across all boards or one board. Use when the user asks for a weekly report, a traffic summary, a client report, "how did my sites do this week", or a summary of their Lookout boards.
+description: Write a weekly (or monthly) Vercel Analytics report from Lookout across all boards or one board. Use when the user asks for a weekly report, a traffic summary or a client report. Also use it for "how did my sites do this week", or a summary of their Lookout boards.
 ---
 
 # Write a Lookout report
@@ -9,7 +9,7 @@ This skill reads the user's Lookout boards and writes a short report: what chang
 
 ## Requirements
 
-This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `list_fixes`, `list_alerts`, and `export_board` only on request). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP, and to install the `lookout` plugin or add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`).
+This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `list_fixes`, `list_alerts`, and `export_board` only on request). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP. Then tell them to install the `lookoutstats` plugin or add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`).
 
 ## Inputs
 
