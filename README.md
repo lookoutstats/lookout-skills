@@ -6,7 +6,7 @@
 
 This repository contains the agent skills for **[Lookout](https://lookoutstats.com)**. Lookout shows Vercel Web Analytics for all your projects in one view.
 
-The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an agent the tools to read your boards. The skills tell the agent which tools to use, and in which sequence, for four tasks:
+The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an agent the tools to read your boards. The skills tell the agent which tools to use, and in which sequence, for these tasks:
 
 | Skill | What it does |
 |---|---|
@@ -14,6 +14,7 @@ The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an a
 | `lookout-investigate` | It finds when the visitors of a site changed. It compares that day with the production deployments, the referrers and your `git log`. Then it names the probable commit or source, or says that there is no clear cause. |
 | `lookout-deploy-check` | It compares Core Web Vitals and visitors before and after one production deploy. It maps the routes that the deploy changed, and it shows each regression with the files that probably caused it. |
 | `lookout-report` | It reads all your boards, or one board, and writes a weekly or monthly report. The report shows what changed, the probable cause and what to fix next. |
+| `vercel-analytics-query` | It gets Vercel Web Analytics numbers in the terminal or in your code, with the open-source [`vercel-analytics-api`](https://www.npmjs.com/package/vercel-analytics-api) package. It needs no Lookout account and no MCP server. |
 
 > "Fix the top item of my Lookout Fix list."
 >
@@ -22,6 +23,8 @@ The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an a
 > "Did my last deploy make the site slower?"
 >
 > "Write my weekly Lookout report."
+>
+> "How many visitors did my Vercel sites get last week?"
 
 ## Install in Claude Code
 
@@ -36,7 +39,7 @@ The [Lookout MCP server](https://github.com/lookoutstats/lookout-mcp) gives an a
 3. When Claude Code asks for the API key, paste it. Claude Code keeps the key in its own settings, not in your repository.
 4. Restart Claude Code.
 
-The plugin installs the four skills and the hosted Lookout MCP server (`https://mcp.lookoutstats.com`).
+The plugin installs the five skills and the hosted Lookout MCP server (`https://mcp.lookoutstats.com`).
 
 ## Install in Cursor, Codex, Copilot and other agents
 

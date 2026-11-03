@@ -1,6 +1,6 @@
 ---
 name: lookout-deploy-check
-description: Check whether a recent production deploy of a Vercel site made it slower or lost visitors, using Lookout's Core Web Vitals and analytics and the git diff of the deploy. Use after a deploy, or when the user asks if a release hurt speed, Core Web Vitals or traffic.
+description: Check whether a recent production deploy of a Vercel site made it slower or lost visitors. It uses Lookout's Core Web Vitals and analytics and the git diff of the deploy. Use after a deploy, or when the user asks if a release hurt speed, Core Web Vitals or traffic.
 ---
 
 # Check a deploy
@@ -9,7 +9,7 @@ A deploy can make pages slower or lose visitors, and nobody sees it until much l
 
 ## Requirements
 
-This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `get_speed`). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP, and to add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`, or the `lookoutstats` plugin). Never write the API key into a file.
+This skill uses the Lookout MCP server (tools `list_boards`, `get_board`, `get_site`, `get_speed`). If the tools are not available, tell the user to create an API key in Lookout, Settings › API & MCP. Then tell them to add the server (`claude mcp add --transport http lookout https://mcp.lookoutstats.com --header "Authorization: Bearer <key>"`, or the `lookoutstats` plugin). Never write the API key into a file.
 
 ## Steps
 
